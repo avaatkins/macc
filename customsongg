@@ -1,0 +1,34 @@
+use_bpm 150
+use_synth :pretty_bell
+
+
+live_loop :low do
+  play :a2
+  sleep 2
+  play :e3
+  sleep 2
+  play :a3
+  sleep 1
+  play :c3
+  sleep 1
+  play :e3
+  sleep 1
+  play :fs5
+  sleep 1
+end
+
+sleep 30
+
+with_fx :level do
+  sample :ambi_glass_hum, amp:20, cutoff:80
+  play :fs5
+  sleep 2
+  play :c5
+  sleep 1
+  play :e5
+  sleep 1
+  play :e3
+  sleep 1
+  play :fs5
+  sleep 1
+end
