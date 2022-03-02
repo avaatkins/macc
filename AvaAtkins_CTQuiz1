@@ -1,0 +1,94 @@
+# Seven Nation Army by The White Stripes
+use_bpm 120
+use_synth :fm
+
+audio = "C:/Users/ava_atkins/Downloads/seven_nation_hold_me_back.wav"
+
+define :s do
+  sleep 0.5
+end
+
+#notes
+live_loop :notes do
+  2.times do
+    play :e3, sustain: 1.5
+    sleep 1.5
+    play :e3
+    s
+    play :g3
+    sleep 0.75
+    play :e3
+    sleep 0.75
+    play :d3
+    s
+    play :c3, sustain: 1.75
+    sleep 2
+    play :b2, sustain: 1.75
+    sleep 2
+  end
+  stop
+end
+
+live_loop :drum do
+  8.times do
+    sample :drum_heavy_kick, amp: 2
+    sleep 1
+  end
+  stop
+end
+
+play :e3, sustain: 1.5
+sleep 1.5
+play :e3
+s
+play :g3
+sleep 0.75
+play :e3
+sleep 0.75
+play :d3
+s
+play :c3, sustain: 1.75
+sleep 2
+play :b2, sustain: 1.75
+sleep 2
+
+sample :drum_snare_soft, amp: 0.25
+s
+sample :drum_snare_soft, amp: 0.5
+s
+sample :drum_snare_soft, amp: 0.75
+s
+sample :drum_snare_soft, amp: 1.0
+s
+sample :drum_snare_soft, amp: 1.25
+s
+sample :drum_snare_soft, amp: 1.5
+s
+sample :drum_snare_soft, amp: 1.75
+s
+sample :drum_snare_soft, amp: 2.0
+s
+sample :drum_snare_soft, amp: 2.25
+s
+sample :drum_snare_soft, amp: 2.5
+s
+sample :drum_snare_soft, amp: 2.75
+s
+sample :drum_snare_soft, amp: 3.0
+s
+sample :drum_snare_soft, amp: 3.25
+s
+sample :drum_snare_soft, amp: 3.5
+s
+sample :drum_snare_soft, amp: 3.75
+s
+sample :drum_snare_soft, amp: 4.0
+s
+
+sample :drum_splash_hard, amp: 2, sustain: 3
+sample :drum_splash_soft, amp: 3, sustain: 2
+
+#vocals
+with_fx :echo do
+  sample audio
+end
