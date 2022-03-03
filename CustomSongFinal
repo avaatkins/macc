@@ -1,0 +1,40 @@
+voice = "C:/Users/ava_atkins/Documents/Audacity/mac.wav"
+
+use_bpm 150
+use_synth :pretty_bell
+s = 1
+t = 2
+
+sample voice
+sleep 16
+
+live_loop :low do
+  play :a2, amp: 0.25
+  sleep t
+  play :e3, amp: 0.50
+  sleep t
+  play :a3, amp: 0.75
+  sleep s
+  play :c3, amp: 1
+  sleep s
+  play :e3, amp: 0.75
+  sleep s
+  play :fs5, amp: 0.50
+  sleep s
+end
+
+sleep 32
+
+with_fx :level do
+  sample :ambi_glass_hum, amp:10, cutoff:80
+  play :fs5
+  sleep t
+  play :c5
+  sleep s
+  play :e5
+  sleep s
+  play :e3
+  sleep s
+  play :fs5
+  sleep s
+end
